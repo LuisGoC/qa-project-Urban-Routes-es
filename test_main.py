@@ -1,12 +1,6 @@
 import data
 from selenium import webdriver
-from selenium.webdriver import Keys
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import expected_conditions
-from selenium.webdriver.support.wait import WebDriverWait
-
 from selenium.webdriver.chrome.options import Options
-
 from page import UrbanRoutesPage
 
 
@@ -29,8 +23,8 @@ class TestUrbanRoutes:
         address_from = data.address_from
         address_to = data.address_to
         routes_page.set_route(address_from, address_to)
-        assert routes_page.get_from() == address_from
-        assert routes_page.get_to() == address_to
+        assert routes_page.get_from_field() == address_from
+        assert routes_page.get_to_field() == address_to
 
     def test_set_comfort_rate(self):
         rate = data.rate
@@ -38,6 +32,14 @@ class TestUrbanRoutes:
         routes_page.click_order_a_taxi_button()
         routes_page.click_comfort_button()
         assert routes_page.get_comfort_rate() == rate
+
+    def test_set_phone_number(self):
+        phone = data.phone_number
+        routes_page = UrbanRoutesPage(self.driver)
+        assert routes_page.get_phone_number() == "Número de teléfono"
+        routes_page.set_phone_number(phone)
+        assert routes_page.get_phone_number() == phone
+
 
     @classmethod
     def teardown_class(cls):
