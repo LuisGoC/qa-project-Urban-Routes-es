@@ -1,6 +1,7 @@
-urban_routes_url = 'https://cnt-a1d6f9fb-8b45-42c7-a314-24c585b97aca.containerhub.tripleten-services.com?lng=es'
+urban_routes_url = 'https://cnt-449f721a-4c15-40b8-9ffd-c47159f30528.containerhub.tripleten-services.com?lng=es'
 address_from = 'East 2nd Street, 601'
 address_to = '1300 1st St'
 phone_number = '+1 123 123 12 12'
 card_number, card_code = '1234 5678 9100', '111'
 message_for_driver = 'Muéstrame el camino al museo'
+rate = "Comfort"

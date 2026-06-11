@@ -32,6 +32,12 @@ class TestUrbanRoutes:
         assert routes_page.get_from() == address_from
         assert routes_page.get_to() == address_to
 
+    def test_set_comfort_rate(self):
+        rate = data.rate
+        routes_page = UrbanRoutesPage(self.driver)
+        routes_page.click_order_a_taxi_button()
+        routes_page.click_comfort_button()
+        assert routes_page.get_comfort_rate() == rate
 
     @classmethod
     def teardown_class(cls):
