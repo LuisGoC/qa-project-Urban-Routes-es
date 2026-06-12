@@ -1,35 +1,87 @@
-# Proyecto de Automatización de Pruebas para Urban Grocers
+# 🚕 Urban Routes - Automatización de Pruebas E2E
 
-Este proyecto consiste en automatizar las pruebas para la funcionalidad de creación de kits de productos en la aplicación Urban Grocers. El objetivo principal es convertir una lista de comprobación manual en pruebas automatizadas utilizando Python y pytest.
-___
-## Sobre el proyecto
+## 📋 Descripción del proyecto
 
-El proyecto automatiza las pruebas del campo `name` en la solicitud de creación de kits de productos, verificando:
+Este proyecto contiene un conjunto de **pruebas automatizadas de extremo a extremo (E2E)** para la aplicación **Urban Routes**, desarrolladas con el objetivo de validar el flujo completo de solicitud de un servicio de transporte desde la perspectiva del usuario final.
 
-- Validación de longitud de caracteres (1-511 caracteres permitidos)
-- Manejo de caracteres especiales, espacios y números
-- Comportamiento con parámetros faltantes o tipos incorrectos
-- Códigos de respuesta HTTP correctos (201 para casos exitosos, 400 para errores)
+Las pruebas automatizadas cubren los siguientes escenarios:
 
-## Componentes principales:
+* 📍 Configuración de direcciones de origen y destino.
+* 🚖 Selección de la tarifa **Comfort**.
+* 📱 Ingreso y verificación del número de teléfono.
+* 💳 Registro y selección de una tarjeta de crédito.
+* 💬 Escritura de un mensaje para el conductor.
+* 🧸 Solicitud de artículos adicionales:
 
-- Pruebas automatizadas que cubren casos positivos y negativos
-- Integración con API de Urban Grocers para crear usuarios y kits
-- Gestión de autenticación con tokens
-- Estructura de proyecto organizada con archivos separados para configuración, datos y pruebas
+  * Manta y pañuelos.
+  * Dos helados.
+* 🔎 Verificación del modal de búsqueda de taxi.
 
-## Fuente de documentación utilizada:
-* _**apiDoc**_ - Documentación de la API de Urban Grocers disponible en: https://cnt-c6329488-07f3-4c44-8bbf-aa83a479fa49.containerhub.tripleten-services.com/docs/
+---
 
-    La documentación específica utilizada se encuentra en la sección "Main.Kits" > "Crear un kit."
+## 🛠️ Tecnologías utilizadas
 
-## Tecnologías utilizadas:
+| Tecnología             | Descripción                                                                      |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| **Python**             | Lenguaje de programación utilizado para desarrollar las pruebas automatizadas.   |
+| **pytest**             | Framework empleado para la organización y ejecución de los casos de prueba.      |
+| **Selenium WebDriver** | Herramienta utilizada para automatizar las interacciones con el navegador web.   |
+| **Git / GitHub**       | Sistema de control de versiones y repositorio para la gestión del código fuente. |
 
-- _**Python**_  como lenguaje de programación
-- _**pytest**_ como framework de testing
-- _**requests**_ para realizar llamadas HTTP a la API
-- _**Git/GitHub**_ para control de versiones
+---
 
+## 🧪 Técnicas y buenas prácticas aplicadas
 
-- Necesitas tener instalados los paquetes pytest y request para ejecutar las pruebas.
-- Ejecuta todas las pruebas con el comando pytest.
+### 📂 Page Object Model (POM)
+
+Patrón de diseño utilizado para mejorar la mantenibilidad y escalabilidad del proyecto, encapsulando los elementos y acciones de cada página en clases independientes.
+
+### 🔄 Pruebas End-to-End (E2E)
+
+Automatización y validación del flujo completo del usuario, simulando escenarios reales de uso de la aplicación.
+
+### ⏱️ Esperas explícitas
+
+Implementación de esperas explícitas para manejar elementos dinámicos y sincronizar correctamente la ejecución de las pruebas con el comportamiento de la interfaz.
+
+### 🎯 Estrategias de localización de elementos
+
+Uso de distintos tipos de selectores para identificar elementos de manera eficiente y robusta:
+
+* `ID`
+* `Class Name`
+* `XPath`
+
+---
+
+## 🎯 Objetivo del proyecto
+
+Fortalecer las habilidades prácticas en **automatización de pruebas web**, aplicando principios de diseño de pruebas y buenas prácticas de desarrollo para garantizar la calidad y confiabilidad de aplicaciones orientadas al usuario final.
+
+---
+
+## ▶️ Ejecución de las pruebas
+
+Para ejecutar el conjunto de pruebas, utiliza el siguiente comando:
+
+```bash
+pytest
+```
+
+Para obtener una salida más detallada durante la ejecución:
+
+```bash
+pytest -v
+```
+
+---
+
+## 📌 Habilidades demostradas
+
+* Diseño y automatización de pruebas funcionales.
+* Implementación del patrón **Page Object Model**.
+* Manejo de elementos dinámicos con Selenium.
+* Aplicación de buenas prácticas de automatización.
+* Organización de suites de prueba con pytest.
+* Uso de Git para el control de versiones.
+

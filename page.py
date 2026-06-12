@@ -25,6 +25,10 @@ class UrbanRoutesPage:
     message_for_driver_field = (By.ID, 'comment')
     blanket_and_tissues_slider_span = (By.XPATH, '(//span[@class="slider round"])[1]')
     blanket_and_tissues_slider_input = (By.XPATH, '(//input[@class="switch-input"])[1]')
+    ice_cream_counter_plus = (By.XPATH, '(//div[@class="counter-plus"])[1]')
+    ice_cream_counter_value = (By.XPATH, '(//div[@class="counter-value"])[1]')
+    order_a_taxi_final_button = (By.CLASS_NAME, 'smart-button-main')
+    order_header_title = (By.CLASS_NAME, 'order-header-title')
 
     def __init__(self, driver):
         self.driver = driver
@@ -141,4 +145,19 @@ class UrbanRoutesPage:
 
     def is_selected_blanket_and_tissues_slider_input(self):
         return self.driver.find_element(*self.blanket_and_tissues_slider_input).is_selected()
+
+    def click_ice_cream_counter_plus(self):
+        element = WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable(self.ice_cream_counter_plus))
+        element.click()
+
+    def get_ice_cream_counter_value(self):
+        return self.driver.find_element(*self.ice_cream_counter_value).text
+
+    def click_order_a_taxi_final_button(self):
+        element = WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable(self.order_a_taxi_final_button))
+        element.click()
+
+    def get_order_header_title(self):
+        return self.driver.find_element(*self.order_header_title).text
+
 

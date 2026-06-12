@@ -62,6 +62,17 @@ class TestUrbanRoutes:
         routes_page.click_blanket_and_tissues_slider_span()
         assert routes_page.is_selected_blanket_and_tissues_slider_input() == True
 
+    def test_set_two_ice_creams(self):
+        routes_page = UrbanRoutesPage(self.driver)
+        routes_page.click_ice_cream_counter_plus()
+        routes_page.click_ice_cream_counter_plus()
+        assert routes_page.get_ice_cream_counter_value() == '2'
+
+    def test_option_to_search_for_a_taxi_appears(self):
+        routes_page = UrbanRoutesPage(self.driver)
+        routes_page.click_order_a_taxi_final_button()
+        assert routes_page.get_order_header_title() == "Buscar automóvil"
+
     @classmethod
     def teardown_class(cls):
         cls.driver.quit()
