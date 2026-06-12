@@ -1,6 +1,7 @@
 import data
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+
 from page import UrbanRoutesPage
 
 
@@ -40,6 +41,14 @@ class TestUrbanRoutes:
         routes_page.set_phone_number(phone)
         assert routes_page.get_phone_number() == phone
 
+    def test_set_payment_method(self):
+        number = data.card_number
+        code = data.card_code
+        method = data.payment_method
+        routes_page = UrbanRoutesPage(self.driver)
+        assert routes_page.get_payment_method() == "Efectivo"
+        routes_page.set_payment_method(number, code)
+        assert routes_page.get_payment_method() == method
 
     @classmethod
     def teardown_class(cls):
