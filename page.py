@@ -22,6 +22,9 @@ class UrbanRoutesPage:
     card_title = (By.XPATH, '//div[@class="head" and text()="Agregar tarjeta"]')
     submit_card_button = (By.XPATH, '//button[@class="button full" and text()="Agregar"]')
     payment_method_close_button = (By.XPATH, '(//button[@class="close-button section-close"])[3]')
+    message_for_driver_field = (By.ID, 'comment')
+    blanket_and_tissues_slider_span = (By.XPATH, '(//span[@class="slider round"])[1]')
+    blanket_and_tissues_slider_input = (By.XPATH, '(//input[@class="switch-input"])[1]')
 
     def __init__(self, driver):
         self.driver = driver
@@ -125,4 +128,17 @@ class UrbanRoutesPage:
         self.click_submit_card_button()
         self.click_payment_method_close_button()
 
+    def set_message_for_driver_field(self, message):
+        element = WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(self.message_for_driver_field))
+        element.send_keys(message)
+
+    def get_message_for_driver(self):
+        return self.driver.find_element(*self.message_for_driver_field).get_property("value")
+
+    def click_blanket_and_tissues_slider_span(self):
+        element = WebDriverWait(self.driver, 3).until(expected_conditions.element_to_be_clickable(self.blanket_and_tissues_slider_span))
+        element.click()
+
+    def is_selected_blanket_and_tissues_slider_input(self):
+        return self.driver.find_element(*self.blanket_and_tissues_slider_input).is_selected()
 

@@ -50,6 +50,18 @@ class TestUrbanRoutes:
         routes_page.set_payment_method(number, code)
         assert routes_page.get_payment_method() == method
 
+    def test_set_message_for_driver(self):
+        message = data.message_for_driver
+        routes_page = UrbanRoutesPage(self.driver)
+        routes_page.set_message_for_driver_field(message)
+        assert routes_page.get_message_for_driver() == message
+
+    def test_set_blanket_and_tissues_slider(self):
+        routes_page = UrbanRoutesPage(self.driver)
+        assert routes_page.is_selected_blanket_and_tissues_slider_input() == False
+        routes_page.click_blanket_and_tissues_slider_span()
+        assert routes_page.is_selected_blanket_and_tissues_slider_input() == True
+
     @classmethod
     def teardown_class(cls):
         cls.driver.quit()
