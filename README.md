@@ -1,52 +1,52 @@
-# 🚕 Urban Routes - Automatización de Pruebas E2E
+# 🚕 Urban Routes - E2E Test Automation
 
-## 📋 Descripción del proyecto
+## 📋 Project Description
 
-Este proyecto contiene un conjunto de **pruebas automatizadas de extremo a extremo (E2E)** para la aplicación **Urban Routes**, desarrolladas con el objetivo de validar el flujo completo de solicitud de un servicio de transporte desde la perspectiva del usuario final.
+This project contains a set of **end-to-end (E2E) automated tests** for the **Urban Routes** application, developed to validate the complete transportation service request flow from the end user's perspective.
 
-Las pruebas automatizadas cubren los siguientes escenarios:
+The automated tests cover the following scenarios:
 
-* 📍 Configuración de direcciones de origen y destino.
-* 🚖 Selección de la tarifa **Comfort**.
-* 📱 Ingreso y verificación del número de teléfono.
-* 💳 Registro y selección de una tarjeta de crédito.
-* 💬 Escritura de un mensaje para el conductor.
-* 🧸 Solicitud de artículos adicionales:
+* 📍 Setting origin and destination addresses.
+* 🚖 Selecting the **Comfort** fare.
+* 📱 Entering and verifying a phone number.
+* 💳 Adding and selecting a credit card.
+* 💬 Writing a message for the driver.
+* 🧸 Requesting additional items:
 
-  * Manta y pañuelos.
-  * Dos helados.
-* 🔎 Verificación del modal de búsqueda de taxi.
-
----
-
-## 🛠️ Tecnologías utilizadas
-
-| Tecnología             | Descripción                                                                      |
-| ---------------------- | -------------------------------------------------------------------------------- |
-| **Python**             | Lenguaje de programación utilizado para desarrollar las pruebas automatizadas.   |
-| **pytest**             | Framework empleado para la organización y ejecución de los casos de prueba.      |
-| **Selenium WebDriver** | Herramienta utilizada para automatizar las interacciones con el navegador web.   |
-| **Git / GitHub**       | Sistema de control de versiones y repositorio para la gestión del código fuente. |
+  * Blanket and tissues.
+  * Two ice creams.
+* 🔎 Verifying the taxi search modal.
 
 ---
 
-## 🧪 Técnicas y buenas prácticas aplicadas
+## 🛠️ Technologies Used
+
+| Technology             | Description                                                                    |
+| ---------------------- | ------------------------------------------------------------------------------ |
+| **Python**             | Programming language used to develop the automated tests.                      |
+| **pytest**             | Framework used to organize and execute the test cases.                         |
+| **Selenium WebDriver** | Tool used to automate interactions with the web browser.                       |
+| **Git / GitHub**       | Version control system and repository used to manage the source code.          |
+
+---
+
+## 🧪 Techniques and Best Practices Applied
 
 ### 📂 Page Object Model (POM)
 
-Patrón de diseño utilizado para mejorar la mantenibilidad y escalabilidad del proyecto, encapsulando los elementos y acciones de cada página en clases independientes.
+Design pattern used to improve the maintainability and scalability of the project by encapsulating the elements and actions of each page into separate classes.
 
-### 🔄 Pruebas End-to-End (E2E)
+### 🔄 End-to-End (E2E) Testing
 
-Automatización y validación del flujo completo del usuario, simulando escenarios reales de uso de la aplicación.
+Automation and validation of the complete user flow by simulating real-world usage scenarios of the application.
 
-### ⏱️ Esperas explícitas
+### ⏱️ Explicit Waits
 
-Implementación de esperas explícitas para manejar elementos dinámicos y sincronizar correctamente la ejecución de las pruebas con el comportamiento de la interfaz.
+Implementation of explicit waits to handle dynamic elements and properly synchronize test execution with the behavior of the user interface.
 
-### 🎯 Estrategias de localización de elementos
+### 🎯 Element Locator Strategies
 
-Uso de distintos tipos de selectores para identificar elementos de manera eficiente y robusta:
+Use of different types of selectors to identify elements efficiently and reliably:
 
 * `ID`
 * `Class Name`
@@ -54,21 +54,21 @@ Uso de distintos tipos de selectores para identificar elementos de manera eficie
 
 ---
 
-## 🎯 Objetivo del proyecto
+## 🎯 Project Objective
 
-Fortalecer las habilidades prácticas en **automatización de pruebas web**, aplicando principios de diseño de pruebas y buenas prácticas de desarrollo para garantizar la calidad y confiabilidad de aplicaciones orientadas al usuario final.
+To strengthen practical skills in **web test automation** by applying test design principles and development best practices to help ensure the quality and reliability of user-facing applications.
 
 ---
 
-## ▶️ Ejecución de las pruebas
+## ▶️ Running the Tests
 
-Para ejecutar el conjunto de pruebas, utiliza el siguiente comando:
+To run the test suite, use the following command:
 
 ```bash
 pytest
 ```
 
-Para obtener una salida más detallada durante la ejecución:
+For more detailed output during execution:
 
 ```bash
 pytest -v
@@ -76,12 +76,12 @@ pytest -v
 
 ---
 
-## 📌 Habilidades demostradas
+## 📌 Skills Demonstrated
 
-* Diseño y automatización de pruebas funcionales.
-* Implementación del patrón **Page Object Model**.
-* Manejo de elementos dinámicos con Selenium.
-* Aplicación de buenas prácticas de automatización.
-* Organización de suites de prueba con pytest.
-* Uso de Git para el control de versiones.
+* Functional test design and automation.
+* Implementation of the **Page Object Model** pattern.
+* Handling dynamic elements with Selenium.
+* Application of test automation best practices.
+* Organization of test suites with pytest.
+* Use of Git for version control.
 
